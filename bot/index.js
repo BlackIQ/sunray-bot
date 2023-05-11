@@ -1,6 +1,7 @@
 import { Socks5 } from "$bot/connections/index.js";
 import { botConfig, appConfig } from "$bot/config/index.js";
-import { User } from "$bot/controllers/index.js";
+import { Client, Upload, Ray } from "$bot/controllers/index.js";
+import { admin } from "$bot/middlewares/index.js";
 
 import { Telegraf } from "telegraf";
 
@@ -10,6 +11,11 @@ const bot = new Telegraf(botConfig.token, {
   },
 });
 
-bot.command("add", (ctx) => User.ADD(ctx));
+bot.hears("ray", Ray.RAY);
+
+bot.command("add", Client.ADD);
+bot.command("delete", Client.DELETE);
+
+bot.on("photo", admin, Upload.PHOTO);
 
 export default bot;
