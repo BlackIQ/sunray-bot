@@ -1,3 +1,5 @@
-import * as User from "$bot/controllers/user/user.controllers.js";
+import * as Client from "$bot/controllers/client/client.controllers.js";
+import * as Upload from "$bot/controllers/upload/upload.controllers.js";
+import * as Ray from "$bot/controllers/ray/ray.controllers.js";
 
-export { User };
+export { Client, Upload, Ray };
