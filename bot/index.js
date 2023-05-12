@@ -11,8 +11,7 @@ const bot = new Telegraf(botConfig.token, {
   },
 });
 
-bot.hears("ray", Ray.RAY);
-
+bot.command("ray", Ray.RAY);
 bot.command("add", Client.ADD);
 bot.command("delete", Client.DELETE);
 

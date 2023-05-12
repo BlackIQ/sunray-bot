@@ -11,16 +11,14 @@ export const PHOTO = async (ctx) => {
 
   const fileId = photo[0].file_id;
 
-  console.log(fileId, caption);
-
   const details = caption.split("|");
 
   const data = { fileId, date: details[0], time: details[1] };
 
   try {
-    await API.post("uploads", data);
+    const result = await API.post("uploads", data);
 
-    await ctx.reply("Hi");
+    await ctx.reply(result.data.message);
   } catch (error) {
     await ctx.reply(error.response.data.message);
   }

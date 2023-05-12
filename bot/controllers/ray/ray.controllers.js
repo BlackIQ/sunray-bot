@@ -1,8 +1,8 @@
 export const RAY = async (ctx) => {
   try {
-    const { data } = await API.get("ray");
+    await API.get("ray");
 
-    await ctx.reply(data.message);
+    await ctx.reply("Request sent");
   } catch (error) {
     await ctx.reply(error.response.data.message);
   }
