@@ -1,5 +1,4 @@
 import { API } from "$bot/api/index.js";
-import { getDate } from "$bot/functions/index.js";
 
 export const PHOTO = async (ctx) => {
   const {
@@ -7,12 +6,12 @@ export const PHOTO = async (ctx) => {
   } = ctx;
 
   if (!caption) {
-    return await ctx.reply("Enter caption");
+    return await ctx.reply("Enter time. [morning/night]");
   }
 
   const fileId = photo[0].file_id;
 
-  const data = { fileId, date: getDate(), time: caption };
+  const data = { fileId, time: caption };
 
   try {
     const result = await API.post("uploads", data);
