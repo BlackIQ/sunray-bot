@@ -14,7 +14,7 @@ export const STAT = async (ctx) => {
   try {
     const { data } = await API.get("ray/stat");
 
-    const messages = [];
+    const messages = ["Clients status.\n"];
 
     Promise.all(
       Object.entries(data).map(([k, v]) => {
