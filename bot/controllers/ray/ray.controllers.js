@@ -17,9 +17,11 @@ export const STAT = async (ctx) => {
     const messages = [];
 
     Promise.all(
-      Object.entries(data).map(([k, v]) =>
-        messages.push(`${k[0].toUpperCase()}: ${v}`)
-      )
+      Object.entries(data).map(([k, v]) => {
+        const name = k.charAt(0).toUpperCase() + k.slice(1);
+
+        messages.push(`${name}: ${v}`);
+      })
     );
 
     await ctx.reply(messages.join("\n"));
