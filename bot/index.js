@@ -11,9 +11,15 @@ const bot = new Telegraf(botConfig.token, {
   },
 });
 
+// Client
 bot.command("add", Client.ADD);
 bot.command("delete", Client.DELETE);
+
+// Ray
+bot.command("stat", admin, Ray.STAT);
 bot.command("ray", admin, Ray.RAY);
+
+// Upload
 bot.on("photo", admin, Upload.PHOTO);
 
 export default bot;

@@ -1,4 +1,4 @@
-const ids = [1133695614];
+const ids = [1133695614, 5347152997];
 
 const admin = async (ctx, next) => {
   const { id } = ctx.message.chat;
