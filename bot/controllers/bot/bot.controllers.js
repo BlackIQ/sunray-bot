@@ -1,3 +1,9 @@
+export const START = async (ctx) => {
+  await ctx.reply(
+    "iSunray is a project that say greadings! Issues and stuff: @BlackIQ. You can use /add to be add in the list and /delete to be deleted from the list. For more information enter /help."
+  );
+};
+
 export const HELP = async (ctx) => {
   const messages = [
     "SunRay manual\n",
